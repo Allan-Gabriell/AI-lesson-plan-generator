@@ -11,7 +11,7 @@ Para executar este projeto localmente, você precisará ter o [Node.js](https://
 1.  **Clone o repositório:**
 
     ```bash
-    git clone https://github.com/seu-usuario/seu-repositorio.git
+    git clone https://github.com/Allan-Gabriell/AI-lesson-plan-generator.git
     cd seu-repositorio
     ```
 
