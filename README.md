@@ -70,7 +70,7 @@ CREATE TABLE input (
     objective TEXT,
     resources TEXT,
     book TEXT,
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('''utc'''::text, now()) NOT NULL
 );
 
 -- Tabela para armazenar os planos de aula gerados
@@ -78,7 +78,7 @@ CREATE TABLE lesson_plan (
     id SERIAL PRIMARY KEY,
     id_input INTEGER REFERENCES input(id),
     output JSONB,
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('''utc'''::text, now()) NOT NULL
 );
 ```
 
@@ -105,6 +105,11 @@ Para que a Edge Function funcione, você precisa configurar uma variável de amb
 1.  Gere uma API Key no [Google AI Studio](https://aistudio.google.com/).
 2.  No painel do Supabase, vá em **Settings** > **Secrets**.
 3.  Crie um novo secret com o nome `GEMINI_API_KEY` e cole a sua chave da API do Gemini como valor.
+
+## Links Úteis
+
+- **Edge Function URL:** https://tbbdevnnzskkvmjljjut.supabase.co/functions/v1/integration-gemini
+- **Supabase Project URL:** https://supabase.com/dashboard/project/tbbdevnnzskkvmjljjut
 
 ## Decisões Técnicas
 
